@@ -9,11 +9,11 @@ import { restController, RestControllerProps, RestFormLoader, RestFormProps, For
 
 import { MqttSettings } from './types';
 
-export const LIGHT_BROKER_SETTINGS_ENDPOINT = ENDPOINT_ROOT + "brokerSettingsLight";
+export const SERVO_BROKER_SETTINGS_ENDPOINT = ENDPOINT_ROOT + "brokerSettingsServo";
 
-type LightMqttSettingsControllerProps = RestControllerProps<MqttSettings>;
+type ServoMqttSettingsControllerProps = RestControllerProps<MqttSettings>;
 
-class LightMqttSettingsController extends Component<LightMqttSettingsControllerProps> {
+class GimbalMqttSettingsController extends Component<ServoMqttSettingsControllerProps> {
 
   componentDidMount() {
     this.props.loadData();
@@ -25,7 +25,7 @@ class LightMqttSettingsController extends Component<LightMqttSettingsControllerP
         <RestFormLoader
           {...this.props}
           render={props => (
-            <LightMqttSettingsControllerForm {...props} />
+            <ServoMqttSettingsControllerForm {...props} />
           )}
         />
       </SectionContent>
@@ -34,11 +34,11 @@ class LightMqttSettingsController extends Component<LightMqttSettingsControllerP
 
 }
 
-export default restController(LIGHT_BROKER_SETTINGS_ENDPOINT, LightMqttSettingsController);
+export default restController(SERVO_BROKER_SETTINGS_ENDPOINT, GimbalMqttSettingsController);
 
-type LightMqttSettingsControllerFormProps = RestFormProps<MqttSettings>;
+type ServoMqttSettingsControllerFormProps = RestFormProps<MqttSettings>;
 
-function LightMqttSettingsControllerForm(props: LightMqttSettingsControllerFormProps) {
+function ServoMqttSettingsControllerForm(props: ServoMqttSettingsControllerFormProps) {
   const { data, saveData, handleValueChange } = props;
   return (
     <ValidatorForm onSubmit={saveData}>

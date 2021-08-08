@@ -5,8 +5,8 @@
 #include <FSPersistence.h>
 #include <SettingValue.h>
 
-#define LIGHT_BROKER_SETTINGS_FILE "/config/brokerSettings.json"
-#define LIGHT_BROKER_SETTINGS_PATH "/rest/brokerSettings"
+#define LIGHT_BROKER_SETTINGS_FILE "/config/brokerSettingsLight.json"
+#define LIGHT_BROKER_SETTINGS_PATH "/rest/brokerSettingsLight"
 
 class LightMqttSettings {
  public:
